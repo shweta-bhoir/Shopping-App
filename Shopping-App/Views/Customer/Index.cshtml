@@ -1,0 +1,62 @@
+﻿@model Shopping_App.Models.OrderDetails
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h4>OrderDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="ItemName" class="control-label"></label>
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemAmount" class="control-label"></label>
+                <input asp-for="ItemAmount" class="form-control" />
+                <span asp-validation-for="ItemAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiscountAmount" class="control-label"></label>
+                <input asp-for="DiscountAmount" class="form-control" />
+                <span asp-validation-for="DiscountAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalAmount" class="control-label"></label>
+                <input asp-for="FinalAmount" class="form-control" />
+                <span asp-validation-for="FinalAmount" class="text-danger"></span>
+            </div>
+            <div class="text-danger" > 
+                @if (ViewData["Error"] != null)
+                {  
+
+                                    <label> @ViewData["Error"]</label>  
+
+                }  
+                
+
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Order" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Details">View Orders</a>
+</div>
+
